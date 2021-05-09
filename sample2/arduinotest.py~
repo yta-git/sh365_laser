@@ -1,0 +1,12 @@
+import serial
+
+with serial.Serial('/dev/cu.usbmodem144401', 9600, timeout=1) as ser:
+    while True:
+        flag = bytes(input(), 'utf-8')
+
+        ser.write(flag)
+
+        if flag == bytes('a', 'utf-8'):
+            break;
+
+    ser.close()

@@ -1,0 +1,20 @@
+import pygame
+from pygame.locals import *
+import sys
+
+def main():
+    pygame.init()
+    screen = pygame.display.set_mod((600, 400))
+    pygame.display.set_caption("pygame test")
+
+    while True:
+        screen.fill((255, 63, 10,))
+        pygame.display.update()
+
+        for event in pygame.event.get():
+            if event.type == QUIT:
+                pygame.quit()
+                sys.exit()
+
+if __name__ == "__main__":
+    main()
